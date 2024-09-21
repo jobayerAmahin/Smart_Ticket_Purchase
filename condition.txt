@@ -1,0 +1,6 @@
+1. after clicking on seat
+----------background will be lime
+----------text color will be white
+----------no seats will be removed
+----------1 seat will be injected to list
+----------seats available will be decrease

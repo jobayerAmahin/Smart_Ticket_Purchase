@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="seatBooking grid grid-cols-3 w-11/12 mx-auto">
+            <div class="seatSec bg-green-100 col-span-2 px-2">
+                <h2>Select Your Seat</h2>
+                <div class="seatAvailable flex justify-between space-y-2">
+                    <div class="available flex items-center">
+                        <i class="fa-solid fa-couch"></i>
+                        <p>Available <span>40</span></p>
+                    </div>
+                    <div class="selected flex items-center">
+                        <i class="fa-solid fa-couch"></i>
+                        <p>Selected <span>0</span></p>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="seatNums grid grid-cols-5">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div>
+                            <i class="fa-solid fa-dharmachakra"></i>
+                        </div>
+                    </div>
+                    <div class="seatNums flex items-center justify-between w-5/6">
+                        <div><p>A</p></div>
+                        <div class="flex gap-2">
+                            <div class="btn bg-slate-200 px-2 py-1" id="A1" onclick="addSeat(this)"><p>A1</p></div>
+                            <div class="btn bg-slate-200 px-2 py-1"><p>A2</p></div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="btn bg-slate-200 px-2 py-1"><p>A3</p></div>
+                            <div class="btn bg-slate-200 px-2 py-1"><p>A4</p></div>
+                        </div>
+                    </div>
+    
+                    <div class="seatNums flex items-center justify-between w-5/6">
+                        <div><p>B</p></div>
+                        <div class="flex gap-2">
+                            <div class="btn bg-slate-200 px-2 py-1"><p>B1</p></div>
+                            <div class="btn bg-slate-200 px-2 py-1"><p>B2</p></div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="btn bg-slate-200 px-2 py-1"><p>B3</p></div>
+                            <div class="btn bg-slate-200 px-2 py-1"><p>B4</p></div>
+                        </div>
+                    </div>
+                    <div class="seatNums flex items-center justify-between w-5/6">
+                        <div><p>C</p></div>
+                        <div class="flex gap-2">
+                            <div class="btn bg-slate-200 px-2 py-1"><p>C1</p></div>
+                            <div class="btn bg-slate-200 px-2 py-1"><p>C2</p></div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="btn bg-slate-200 px-2 py-1"><p>C3</p></div>
+                            <div class="btn bg-slate-200 px-2 py-1"><p>C4</p></div>
+                        </div>
+                    </div>
+                    <div class="seatNums flex items-center justify-between w-5/6">
+                        <div><p>D</p></div>
+                        <div class="flex gap-2">
+                            <div class="btn bg-slate-200 px-2 py-1"><p>D1</p></div>
+                            <div class="btn bg-slate-200 px-2 py-1"><p>D2</p></div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="btn bg-slate-200 px-2 py-1"><p>D3</p></div>
+                            <div class="btn bg-slate-200 px-2 py-1"><p>D4</p></div>
+                        </div>
+                    </div>
+                    <div class="seatNums flex items-center justify-between w-5/6">
+                        <div><p>E</p></div>
+                        <div class="flex gap-2">
+                            <div class="btn bg-slate-200 px-2 py-1"><p>E1</p></div>
+                            <div class="btn bg-slate-200 px-2 py-1"><p>E2</p></div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="btn bg-slate-200 px-2 py-1"><p>E3</p></div>
+                            <div class="btn bg-slate-200 px-2 py-1"><p>E4</p></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="priceSec w-11/12 mx-auto">
+                <h2>Select Your Seat</h2>
+                <div class="flex justify-between">
+                    <p>Seats <span>0</span></p>
+                    <p>Class</p>
+                    <p>Price</p>
+                </div>
+                <h1 id="noSeatLine" class="text-error text-2xl flex justify-center">No seats booked yet</h1>
+            </div>
+        </div>
+    </main>
+
+    <script src="./utility.js"></script>
+</body>
+</html>
