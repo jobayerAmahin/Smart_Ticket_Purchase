@@ -11,7 +11,7 @@
 </head>
 <body>
     <main>
-        <div class="seatBooking grid grid-cols-3 w-11/12 mx-auto">
+        <div class="seatBooking grid grid-cols-3 w-11/12 mx-auto gap-9 my-5">
             <div class="seatSec bg-green-100 col-span-2 px-2">
                 <h2>Select Your Seat</h2>
                 <div class="seatAvailable flex justify-between space-y-2">
@@ -95,15 +95,26 @@
                 </div>
 
             </div>
-            <div id="priceList" class="priceSec w-11/12 mx-auto">
-                <h2>Select Your Seat</h2>
-                <div class="flex justify-between">
-                    <p>Seats <span id="selectNo">0</span></p>
-                    <p>Class</p>
-                    <p>Price</p>
+
+            <div class="card card-compact bg-base-100 w-96 shadow-xl">
+                <div class="card-body">
+                    <div id="priceList" class="priceSec w-11/12 mx-auto">
+                        <h2>Select Your Seat</h2>
+                        <div class="flex justify-evenly">
+                            <p>Seats <span id="selectNo">0</span></p>
+                            <p>Class</p>
+                            <p>Price</p>
+                        </div>
+                        <hr class="color-black">
+                        <h1 id="noSeatLine" class="text-error text-2xl flex justify-center">No seats booked yet</h1>
+                    </div>
+                    <div id="totalList">
+
+                    </div>
                 </div>
-                <h1 id="noSeatLine" class="text-error text-2xl flex justify-center">No seats booked yet</h1>
-            </div>
+              </div>
+
+
         </div>
     </main>
 
