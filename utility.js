@@ -4,6 +4,8 @@ let totalPrice=0;
 
 //Seat Clicking function
 function addSeat(event){
+
+    //Coupon section enable
     if(collectedSeat.length>2){
         document.getElementById('couponInput').removeAttribute('disabled')
         document.getElementById('couponButton').removeAttribute('disabled')
@@ -29,6 +31,9 @@ function addSeat(event){
         return;
     }
     collectedSeat.push(seatNo);
+    if(collectedSeat.length>0){
+        document.getElementById('phoneNumber').removeAttribute('disabled')
+    }
 
     //Seat List Addition to List
     document.getElementById('noSeatLine').classList.add('hidden');
