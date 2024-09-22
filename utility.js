@@ -3,7 +3,21 @@ let collectedSeat=[];
 let totalPrice=0;
 
 function addSeat(event){
+    if(collectedSeat.length>2){
+        document.getElementById('couponInput').removeAttribute('disabled')
+        document.getElementById('couponButton').removeAttribute('disabled')
+        const couponCode=parseFloat(document.getElementById('couponInput').value)
+        document.getElementById('couponButton').addEventListener('click',function(){
+            if(couponCode===1426){
+                console.log("Done")
+            }
+            else{
+                console.log('Not Matched')
+            }
+        })
+    }
     if(collectedSeat.length>3){
+        document.getElementById('couponInput').removeAttribute('disabled')
         alert('Maximum 4 seats can be selected')
         event.style.backgroundColor='default';
         event.style.color='default';
@@ -31,23 +45,24 @@ function addSeat(event){
     `
     document.getElementById('priceList').appendChild(newline)
 
-    let avilableNo=parseFloat(document.getElementById('availableNo').innerText)
-    avilableNo-=1;
-    document.getElementById('availableNo').innerText=avilableNo;
 
-    let selectNo=parseFloat(document.getElementById('selectNo').innerText)
-    selectNo+=1;
-    document.getElementById('selectNo').innerText=selectNo;
+    let nOfSeats=parseFloat(document.getElementById('nOfSeats').innerText)
+    nOfSeats+=1;
+  
+    document.getElementById('nOfSeats').style.color='lime'
+    document.getElementById('nOfSeats').style.fontSize='20px'
+    document.getElementById('nOfSeats').style.fontWeight='bold'
+    document.getElementById('nOfSeats').innerText=nOfSeats;
+
+    let availableSeats=parseFloat(document.getElementById('availableSeats').innerText)
+    availableSeats-=1;
+  
+    document.getElementById('availableSeats').style.color='lime'
+    document.getElementById('availableSeats').style.fontSize='20px'
+    document.getElementById('availableSeats').style.fontWeight='bold'
+    document.getElementById('availableSeats').innerText=availableSeats;
 
     totalPrice+=550;
-    const bottomSec=document.createElement('div');
-    bottomSec.classList.add('flex')
-    bottomSec.classList.add('justify-end')
-    bottomSec.innerHTML=`
-    <hr>
-    <p>Total Price</p>
-    <p>${totalPrice}</p>
-    `
-    document.getElementById('totalList').appendChild(bottomSec)
-
+    document.getElementById('totalList').classList.remove('hidden')
+    document.getElementById('totalValue').innerText=totalPrice;
 }
