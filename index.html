@@ -13,7 +13,8 @@
             extend: {
               colors: {
                 clifford: '#da373d',
-                primary:'lime'
+                primary:'lime',
+                modalBtn:'rgb(39, 174, 96)'
               }
             }
           }
@@ -167,14 +168,62 @@
                     <hr class="color-black">
                     <h1 id="noSeatLine" class="text-error text-2xl flex justify-center">No seats booked yet</h1>
                 </div>
-                <div id="totalList" class="flex justify-center hidden text-1xl font-bold">
-                    <hr>
+                <p class="border-dashed border-b-2 my-3"></p>
+                <div id="totalList" class="flex justify-center hidden text-1xl font-bold my-3">
                     <h1>Total Price <span id="totalValue">0</span></h1>
                 </div>
+                <p class="border-dashed border-b-2 my-3"></p>
 
                 <div class="coupon flex justify-between bg-base-100 p-2 rounded-lg">
                     <input id="couponInput" type="text" placeholder="Having any coupon" class="input input-bordered w-full max-w-xs" disabled/>
-                    <button id="couponButton" class="btn btn-success" disabled>Success</button> 
+                    <button id="couponButton" class="btn btn-success border-0 bg-primary hover:text-white" disabled>Apply</button> 
+                </div>
+                <p id="wrongCoupon" class="text-error font-bold"></p>
+                <div id="grandPrice">
+                    <p class="border-dashed border-b-2 my-3"></p>
+                    <h1 class="flex justify-center font-bold text-black-200">Grand Price  <span id="grandValue">****</span></h1>
+                </div>
+                <p class="border-dashed border-b-2 my-3"></p>
+                <div class="passengerInfo bg-white px-3 py-8 rounded-lg" id="passengerInfo">
+                    <div class="flex flex-col">
+                        <label for="" class="text-black-200 font-bold">Passenger Name</label>
+                        <input type="text" placeholder="Enter Your Name" class="input input-bordered w-full max-w-md my-3" />
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="" class="text-black-200 font-bold">Phone Number</label>
+                        <input id="phoneNumber" type="number" placeholder="Enter Your Number" class="input input-bordered w-full max-w-md my-3" />
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="" class="text-black-200 font-bold">Email ID</label>
+                        <input type="email" placeholder="Enter Your Email" class="input input-bordered w-full max-w-md my-3" />
+                    </div>
+
+                    <button id="nextBtn" onclick="my_modal_5.showModal()" class="btn btn-wide w-full max-w-md bg-primary hover:bg-green-600 hover:text-white" disabled>Next</button>
+                    <!-- Open the modal using ID.showModal() method -->
+                    
+                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                    <div class="modal-box flex flex-col gap-3 items-center text-center">
+                        <img src="./images/success.png" class="w-1/4 h-1/4" alt="">
+                        <h2 class="text-3xl text-modalBtn">SUCCESS</h2>
+                        <h3 class="text-lg font-bold">Thank you for booking our bus seats.</h3>
+                        <h3 class="text-lg font-bold">We are working hard to find the best service and deals for you.</h3>
+
+                        <p class="py-4 text-lg">Shortly you will find a confirmation in your email.</p>
+                        <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button id="reload" class="btn btn-wide bg-modalBtn text-white text-lg font-bold rounded-full">Continue</button>
+                        </form>
+                        </div>
+                    </div>
+                    </dialog>
+
+                    <div class="terms flex justify-between mt-5">
+                        <a href="#" class="underline">Terms and Condition</a>
+                        <a href="#" class="underline">Cancellation Policy</a>
+                    </div>
                 </div>
             </div>
 
